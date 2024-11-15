@@ -108,3 +108,39 @@ li {
 .footer p:last-child {
     font-size: 1.2rem;
 }
+#sobre-mi h3 {
+    font-size: 1.6rem;
+    color: #0073e6;
+    margin-top: 1.5rem;
+}
+
+#sobre-mi ul {
+    list-style-type: disc;
+    padding-left: 20px;
+    font-size: 1.1rem;
+    margin-top: 0.5rem;
+}
+
+#sobre-mi ul li {
+    margin-bottom: 0.5rem;
+}
+
+.about-icons {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    margin-top: 1.5rem;
+}
+
+.profile-pic {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    object-fit: cover;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.icons span {
+    font-size: 1.2rem;
+    margin-right: 1rem;
+}

@@ -10,24 +10,33 @@
     <!-- Menú de Navegación -->
     <nav class="navbar">
         <ul>
-            <li><a href="#inicio">Inicio</a></li>
-            <li><a href="/sobre-mi.html">Sobre Mí</a></li>
-            <li><a href="/habilidades.html">Habilidades</a></li>
-            <li><a href="/hobbies.html">Hobbies</a></li>
-            <li><a href="/contacto.html">Contacto</a></li>
+            <li><a href="#" onclick="loadContent('inicio')">Inicio</a></li>
+            <li><a href="#" onclick="loadContent('sobre-mi.html')">Sobre Mí</a></li>
+            <li><a href="#" onclick="loadContent('habilidades.html')">Habilidades</a></li>
+            <li><a href="#" onclick="loadContent('hobbies.html')">Hobbies</a></li>
+            <li><a href="#" onclick="loadContent('contacto.html')">Contacto</a></li>
         </ul>
     </nav>
 
-    <!-- Sección de Bienvenida -->
-    <header class="hero" id="inicio">
-        <h1>¡Hola! Bienvenido a Mi Página</h1>
-        <p>Estudiante de Ingeniería en Software</p>
-    </header>
+    <!-- Contenido principal que cambia dinámicamente -->
+    <div id="main-content">
+        <header class="hero" id="inicio">
+            <h1>¡Hola! Bienvenido a Mi Página</h1>
+            <p>Estudiante de Ingeniería en Software</p>
+        </header>
+    </div>
 
-    <!-- Pie de Página -->
-    <footer class="footer" id="contacto">
-        <p>Contacto: email@example.com</p>
-        <p>Sígueme en redes sociales</p>
-    </footer>
+    
+    <!-- Script para cargar contenido dinámico -->
+    <script>
+        function loadContent(page) {
+            fetch(page)
+                .then(response => response.text())
+                .then(data => {
+                    document.getElementById('main-content').innerHTML = data;
+                })
+                .catch(error => console.log('Error al cargar el contenido:', error));
+        }
+    </script>
 </body>
 </html>
