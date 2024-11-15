@@ -1,0 +1,110 @@
+/* Reseteo de estilos */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Estilos generales */
+body {
+    font-family: Arial, sans-serif;
+    color: #333;
+    background-color: #f4f4f4;
+    line-height: 1.6;
+}
+
+/* Estilo del navbar */
+.navbar {
+    background-color: #0073e6;
+    color: #fff;
+    padding: 1rem;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+}
+
+.navbar ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+}
+
+.navbar li {
+    margin: 0;
+}
+
+.navbar a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 1.1rem;
+    font-weight: bold;
+}
+
+.navbar a:hover {
+    color: #f0f0f0;
+}
+
+/* Sección de bienvenida */
+.hero {
+    background-color: #0073e6;
+    color: #fff;
+    text-align: center;
+    padding: 4rem 1rem;
+    margin-top: 60px; /* Espacio para el navbar */
+}
+
+.hero h1 {
+    font-size: 2.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.hero p {
+    font-size: 1.2rem;
+}
+
+/* Estilo de las secciones */
+section {
+    padding: 2rem 1rem;
+    max-width: 800px;
+    margin: 0 auto;
+    background: #fff;
+    margin-top: 1rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+h2 {
+    font-size: 1.8rem;
+    color: #0073e6;
+    margin-bottom: 1rem;
+}
+
+ul {
+    list-style-type: none;
+}
+
+li {
+    font-size: 1.1rem;
+    margin: 0.5rem 0;
+}
+
+/* Pie de página */
+.footer {
+    text-align: center;
+    padding: 1.5rem;
+    background-color: #0073e6;
+    color: #fff;
+    margin-top: 1rem;
+}
+
+.footer p {
+    font-size: 1rem;
+    margin: 0.5rem 0;
+}
+
+.footer p:last-child {
+    font-size: 1.2rem;
+}
