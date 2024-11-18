@@ -18,46 +18,59 @@
             <li><a href="#" onclick="loadContent('contacto.html')">Contacto</a></li>
         </ul>
     </nav>
+ <!-- Contenido principal que cambia dinámicamente -->
+ <div id="main-content">
+    <header class="hero" id="inicio">
+        <h1>¡Hola! Bienvenido a Mi Página</h1>
+        <p>Estudiante de Ingeniería en Software</p>
+    </header>
+    <!-- Section Previews -->
+    <section class="section-previews">
+        <div class="preview-card" onclick="loadContent('sobre-mi.html')">
+            <h2>Sobre Mí</h2>
+            <p>Conoce más acerca de mi formación, experiencia y metas.</p>
+        </div>
+        <div class="preview-card" onclick="loadContent('habilidades.html')">
+            <h2>Habilidades</h2>
+            <p>Descubre las habilidades que he desarrollado en mi carrera.</p>
+        </div>
+        <div class="preview-card" onclick="loadContent('proyectos.html')">
+            <h2>Proyectos</h2>
+            <p>Explora algunos de los proyectos en los que he trabajado.</p>
+        </div>
+        <div class="preview-card" onclick="loadContent('contacto.html')">
+            <h2>Contacto</h2>
+            <p>Ponte en contacto conmigo para oportunidades de colaboración.</p>
+        </div>
+    </section>
+</div>
 
-    <!-- Contenido principal que cambia dinámicamente -->
-    <div id="main-content">
-        <header class="hero" id="inicio">
-            <h1>¡Hola! Bienvenido a Mi Página</h1>
-            <p>Estudiante de Ingeniería en Software</p>
-        </header>
-        <!-- Section Previews -->
-<section class="section-previews">
-    <div class="preview-card" onclick="loadContent('sobre-mi.html')">
-        <h2>Sobre Mí</h2>
-        <p>Conoce más acerca de mi formación, experiencia y metas.</p>
-    </div>
-    <div class="preview-card" onclick="loadContent('habilidades.html')">
-        <h2>Habilidades</h2>
-        <p>Descubre las habilidades que he desarrollado en mi carrera.</p>
-    </div>
-    <div class="preview-card" onclick="loadContent('proyectos.html')">
-        <h2>Proyectos</h2>
-        <p>Explora algunos de los proyectos en los que he trabajado.</p>
-    </div>
-    <div class="preview-card" onclick="loadContent('contacto.html')">
-        <h2>Contacto</h2>
-        <p>Ponte en contacto conmigo para oportunidades de colaboración.</p>
-    </div>
-</section>
+<!-- Footer placeholder where footer.html will load -->
+<div id="footer-placeholder"></div>
 
-    </div>
+<!-- Script para cargar contenido dinámico -->
+<script>
+    function loadContent(page) {
+        fetch(page)
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('main-content').innerHTML = data;
+            })
+            .catch(error => console.log('Error al cargar el contenido:', error));
+    }
 
-    
-    <!-- Script para cargar contenido dinámico -->
-    <script>
-        function loadContent(page) {
-            fetch(page)
-                .then(response => response.text())
-                .then(data => {
-                    document.getElementById('main-content').innerHTML = data;
-                })
-                .catch(error => console.log('Error al cargar el contenido:', error));
-        }
-    </script>
+    // Load the footer only once when the page initially loads
+    function loadFooter() {
+        fetch('footer.html')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('footer-placeholder').innerHTML = data;
+            })
+            .catch(error => console.log('Error al cargar el footer:', error));
+    }
+
+    // Call loadFooter to load the footer once when the page loads
+    loadFooter();
+</script>
 </body>
 </html>
